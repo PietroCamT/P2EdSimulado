@@ -1,3 +1,4 @@
+// Pietro Fortunato
 #include <iostream>
 using namespace std;
 
@@ -283,6 +284,20 @@ void exibirElementosArvore(NO* no, int qtEspacos)
 
 void exibirElementosEmOrdem(NO* no)
 {
+	if (no == NULL) {
+		return;
+	}
+		if (no->dir == NULL) {
+			cout << no->valor << endl;
+			return;
+		}
+		else{
+			exibirElementosEmOrdem(no->dir);
+			cout << no->valor << endl;
+			if (no->esq != NULL) {
+				exibirElementosEmOrdem(no->esq);
+			}
+		}
 	
 }
 
